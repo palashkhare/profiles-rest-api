@@ -1,2 +1,6 @@
 # Exclude venv
 venv/
+__pycache__/
+static/
+lib/
+lib64/
