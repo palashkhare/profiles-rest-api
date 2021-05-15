@@ -4,3 +4,4 @@ __pycache__/
 static/
 lib/
 lib64/
+.vagrant/
