@@ -17,3 +17,14 @@ To log into Vagrant image
 Vagrant ssh
 To exit
 exit
+
+Django
+django-admin startproject djangoapi
+manage.py startapp profiles
+customize user model
+manage.py makemigration 'appname'
+manage.py migrate
+
+create models - django orm
+create views
+create serializers  
