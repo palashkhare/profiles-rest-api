@@ -667,4 +667,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMSNsx3XoJH5upOYF84vl7Q+bHqLWbseni0+pp6T/T
 [   37.691445] cloud-init[1386]: Cloud-init v. 21.1-19-gbad84ad4-0ubuntu1~18.04.2 running 'modules:final' at Fri, 14 May 2021 01:42:04 +0000. Up 37.36 seconds.
 [   37.691568] cloud-init[1386]: ci-info: no authorized SSH keys fingerprints found for user ubuntu.
 [   37.693322] cloud-init[1386]: Cloud-init v. 21.1-19-gbad84ad4-0ubuntu1~18.04.2 finished at Fri, 14 May 2021 01:42:04 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 37.67 seconds
-
+[37488.386440] INFO: rcu_sched detected stalls on CPUs/tasks:
+[37488.388012] 	1-...!: (1 GPs behind) idle=5e2/140000000000000/0 softirq=92433/92434 fqs=4 
+[37488.389703] 	(detected by 0, t=61741 jiffies, g=49678, c=49677, q=230)
+[37488.392306] rcu_sched kthread starved for 61733 jiffies! g49678 c49677 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
