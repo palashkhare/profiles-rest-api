@@ -671,3 +671,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMSNsx3XoJH5upOYF84vl7Q+bHqLWbseni0+pp6T/T
 [37488.388012] 	1-...!: (1 GPs behind) idle=5e2/140000000000000/0 softirq=92433/92434 fqs=4 
 [37488.389703] 	(detected by 0, t=61741 jiffies, g=49678, c=49677, q=230)
 [37488.392306] rcu_sched kthread starved for 61733 jiffies! g49678 c49677 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
+[192248.895884] INFO: rcu_sched detected stalls on CPUs/tasks:
+[192248.897442] 	1-...!: (1 GPs behind) idle=eb4/0/0 softirq=138991/138991 fqs=1 
+[192248.899025] 	(detected by 0, t=270676 jiffies, g=111028, c=111027, q=8)
+[192248.901249] rcu_sched kthread starved for 820381 jiffies! g111028 c111027 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
+[192248.903380] INFO: rcu_sched detected stalls on CPUs/tasks:
+[192248.904424] 	1-...!: (1 GPs behind) idle=ec4/0/0 softirq=138991/138991 fqs=1 
+[192248.906106] 	(detected by 0, t=820434 jiffies, g=111028, c=111027, q=8)
+[192248.908227] rcu_sched kthread starved for 820383 jiffies! g111028 c111027 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0 ->cpu=0

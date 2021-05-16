@@ -2,8 +2,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
+from rest_framework import filters
 
 from profiles import serializers
+from profiles import models
+from profiles import permissions
+
 
 class HelloApiView(APIView):
     """Test API View"""
@@ -106,3 +111,18 @@ class HelloViewSets(viewsets.ViewSet):
     def destroy(self, request, pk=None):
         """Handle DELETE request by ID"""
         return Response({'http_method':'DELETE'})
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """ handel creating and updating profiles
+        Modelviewset set are a type of regular viewset but they are made to
+        perform model based operations.
+
+        ModelViewSet by default knows that Create, Update, Read and Delete
+        operations
+    """
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.UpdateOwnProfile, )
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name', 'email')
