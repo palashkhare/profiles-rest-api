@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
-
+from django.conf import settings
+# from rest_framework.authtoken.models import Token
 
 class UserProfileManager(BaseUserManager):
     """Class to manage user profile manager.
@@ -65,3 +66,26 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         """return string repressentation of our user"""
         return self.email
+
+class ProfileFeedItems(models.Model):
+    """Profilr Status Update"""
+    # Relation is setup with authorized user.
+    # We are using the variable settings.AUTH_USER_MODEL because in case we
+    # change default user model, It will not need to change the haardcode model
+    # class
+
+    # user_profile = models.ForeignKey(
+    #    settings.AUTH_USER_MODEL,
+    #    on_delete=models.CASCADE,
+    # )
+
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.CASCADE,
+    )
+
+    status_text = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.status_text

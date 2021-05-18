@@ -679,3 +679,27 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMSNsx3XoJH5upOYF84vl7Q+bHqLWbseni0+pp6T/T
 [192248.904424] 	1-...!: (1 GPs behind) idle=ec4/0/0 softirq=138991/138991 fqs=1 
 [192248.906106] 	(detected by 0, t=820434 jiffies, g=111028, c=111027, q=8)
 [192248.908227] rcu_sched kthread starved for 820383 jiffies! g111028 c111027 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0 ->cpu=0
+[275945.855081] INFO: rcu_sched detected stalls on CPUs/tasks:
+[275946.830116] 	(detected by 0, t=465203 jiffies, g=161194, c=161193, q=672)
+[275946.833403] All QSes seen, last rcu_sched kthread activity 465189 (4362780187-4362314998), jiffies_till_next_fqs=1, root ->qsmask 0x0
+[275946.840027] rcu_sched kthread starved for 465189 jiffies! g161194 c161193 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x200 ->cpu=0
+[275946.848014] INFO: rcu_sched detected stalls on CPUs/tasks:
+[275946.851627] 	(detected by 0, t=1564963 jiffies, g=161194, c=161193, q=680)
+[275946.856438] All QSes seen, last rcu_sched kthread activity 1564949 (4363879947-4362314998), jiffies_till_next_fqs=1, root ->qsmask 0x0
+[275946.862974] rcu_sched kthread starved for 1564949 jiffies! g161194 c161193 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x200 ->cpu=0
+[282802.846721] INFO: rcu_sched self-detected stall on CPU
+[282802.874858] 	0-...!: (1 ticks this GP) idle=a96/1/0 softirq=548343/548343 fqs=0 
+[282803.026506] 	 (t=497100 jiffies g=161895 c=161894 q=8)
+[282803.038910] INFO: rcu_sched self-detected stall on CPU
+[282803.043141] rcu_sched kthread starved for 1046905 jiffies! g161895 c161894 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
+[282803.055679] 	1-...!: (1 GPs behind) idle=7f2/1/0 softirq=183308/183308 fqs=0 
+[282803.068613] 	 (t=1046905 jiffies g=161895 c=161894 q=8)
+[282803.070844] rcu_sched kthread starved for 1046905 jiffies! g161895 c161894 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x0 ->cpu=0
+[82.202235] INFO: rcu_sched self-detected stall on CPU
+[361782.454661] INFO: rcu_sched self-detected stall on CPU
+[361783.257788] 	0-...!: (1 ticks this GP) idle=25e/1/0 softirq=665595/665595 fqs=0 
+[361783.261259] 	
+[361783.261263] 	1-...!: (1 GPs behind) idle=69a/1/0 softirq=203399/203399 fqs=0 
+[361783.261269] rcu_sched kthread starved for 20907 jiffies! g190121 c190120 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
+[361783.261764] 	 (t=20907 jiffies g=190121 c=190120 q=8)
+[361783.268307] rcu_sched kthread starved for 20907 jiffies! g190121 c190120 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0

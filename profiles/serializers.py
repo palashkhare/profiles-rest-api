@@ -36,9 +36,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """Create and return new user
-            This function will override the create function in UserProfile class
+            This function will override the create function in of Serializer
         """
-        print(validated_data)
+
         user = models.UserProfile.objects.create_user(
             email=validated_data['email'],
             name=validated_data['name'],
@@ -46,3 +46,14 @@ class UserProfileSerializer(serializers.ModelSerializer):
         )
 
         return user
+
+class ProfileFeedItemSerializer(serializers.ModelSerializer):
+    """ModelSerializer for feed"""
+
+    class Meta:
+        model = models.ProfileFeedItems
+        fields = ('id', 'user_profile', 'status_text', 'created_on')
+
+        extra_kwargs = {
+            'user_profile' : {'read_only':True}
+        }

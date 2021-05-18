@@ -133,4 +133,20 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 class UserLoginApiView(ObtainAuthToken):
     """ Handle Creating User Auth tokens """
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
-    
+
+class UserProfileFeedViewSet(viewsets.ModelViewSet):
+    """Creating, reading and updation profile feed items """
+    authentication_classes = (TokenAuthentication,)
+    serializer_class = serializers.ProfileFeedItemSerializer
+    queryset = models.ProfileFeedItems.objects.all() # This mean we will be managing all the items in model
+
+    def perform_create(self, serializer):
+        """ Sets the user profile to the loggedin user
+            Overrides behaviour of object creation from model viewset.
+            When a request is made through ModelViewSet it is passed into
+            Serializer class and validated and then passed into .save function
+            To customize the logic for object creation, perform_create function
+            can be used.
+        """
+        print("*"*8, self.request, self.request.user)
+        serializer.save(user_profile=self.request.user)
