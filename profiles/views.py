@@ -6,7 +6,11 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework import filters
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
-
+# IsAuthenticatedOrReadOnly : This permission allows user to readall the feeds
+# nut modify the feed only which they are authenticated for
+# IsAuthenticated: This to restrict users from watching anything if they are
+# not  authenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from profiles import serializers
 from profiles import models
 from profiles import permissions
@@ -139,7 +143,10 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.ProfileFeedItemSerializer
     queryset = models.ProfileFeedItems.objects.all() # This mean we will be managing all the items in model
-
+    permission_classes = (
+        permissions.UpdateOwnStatus,
+        IsAuthenticated,
+    )
     def perform_create(self, serializer):
         """ Sets the user profile to the loggedin user
             Overrides behaviour of object creation from model viewset.

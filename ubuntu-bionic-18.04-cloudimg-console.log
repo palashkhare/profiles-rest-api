@@ -703,3 +703,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMSNsx3XoJH5upOYF84vl7Q+bHqLWbseni0+pp6T/T
 [361783.261269] rcu_sched kthread starved for 20907 jiffies! g190121 c190120 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
 [361783.261764] 	 (t=20907 jiffies g=190121 c=190120 q=8)
 [361783.268307] rcu_sched kthread starved for 20907 jiffies! g190121 c190120 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
+[379719.620877] INFO: rcu_sched self-detected stall on CPU
+[379719.623323] 	0-...!: (1 ticks this GP) idle=34a/1/0 softirq=732564/732564 fqs=0 
+[379719.626432] 	 (t=91999 jiffies g=203569 c=203568 q=1)
+[379719.628619] rcu_sched kthread starved for 91999 jiffies! g203569 c203568 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
